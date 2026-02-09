@@ -22,6 +22,12 @@
 		}, 4000);
 		return () => clearInterval(interval);
 	});
+
+	const projectVisuals = [
+		'/images/project-visuals/page-00.webp',
+		'/images/project-visuals/page-01.webp',
+		'/images/project-visuals/page-02.webp'
+	];
 </script>
 
 <svelte:head>
@@ -41,6 +47,42 @@
 			<p class="mt-6 text-xl text-urban-charcoal/70">
 				The GRIND Collective designs and supports programs that connect youth to hands-on learning, mentorship, research, and creative production.
 			</p>
+		</div>
+	</div>
+</section>
+
+<!-- Project Visuals -->
+<section class="bg-white py-16 lg:py-24 border-t border-dust-sand/20">
+	<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+		<!-- First two images side by side -->
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+			<div class="card-hover rounded-2xl overflow-hidden shadow-lg">
+				<img
+					src={projectVisuals[0]}
+					alt="Project visuals page 1"
+					class="w-full h-auto"
+					loading="eager"
+				/>
+			</div>
+			<div class="card-hover rounded-2xl overflow-hidden shadow-lg">
+				<img
+					src={projectVisuals[1]}
+					alt="Project visuals page 2"
+					class="w-full h-auto"
+					loading="eager"
+				/>
+			</div>
+		</div>
+		<!-- Third image centered -->
+		<div class="flex justify-center">
+			<div class="card-hover w-full md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+				<img
+					src={projectVisuals[2]}
+					alt="Project visuals page 3"
+					class="w-full h-auto"
+					loading="lazy"
+				/>
+			</div>
 		</div>
 	</div>
 </section>
@@ -119,3 +161,13 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.card-hover {
+		transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+	}
+	.card-hover:hover {
+		transform: scale(1.03) rotate(1deg);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+	}
+</style>
